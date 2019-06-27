@@ -1,14 +1,25 @@
 import React from 'react';
 
+
 class PokemonIndex extends React.Component{
   constructor(props){
-    // console.log(props);
     super(props);
+  }
+
+  componentDidMount() {
+    this.props.requestAllPokemon();
   }
 
   render () {
     return (
-      <div>Pokemon Index Page</div>
+      <div>
+        {this.props.pokemon.map(poke => (
+          <div>
+            <div>{poke.name}</div>
+            <img src={poke.image_url}/>
+          </div>
+        ))}
+      </div>
     );
   }
 

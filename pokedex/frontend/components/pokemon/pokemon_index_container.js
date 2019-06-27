@@ -7,7 +7,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  requestAllPokemon: dispatch(requestAllPokemon)
+  requestAllPokemon: () => dispatch(requestAllPokemon())
 });
 
 export default connect(mapStateToProps,mapDispatchToProps)(PokemonIndex);
