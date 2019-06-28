@@ -7,7 +7,7 @@ import PokemonDetailContainer from './pokemon/pokemon_detail_container';
 const Root = ({ store }) => (
   <Provider store={store}>
     <HashRouter>
-      <div>All the Pokemon
+      <div>
         <Route exact path="/" component={PokemonIndexContainer} />
         <Route path="/pokemon/:pokemonId" component={PokemonDetailContainer}/>
       </div>

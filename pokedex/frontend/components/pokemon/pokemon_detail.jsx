@@ -1,4 +1,5 @@
 import React from 'react';
+import ItemDetailContainer from '../items/item_detail_container';
 
 class PokemonDetail extends React.Component {
   constructor(props){
@@ -6,21 +7,27 @@ class PokemonDetail extends React.Component {
   }
 
   componentDidMount(){
-    // const PokemonId = this.props.match.params.pokemonId;
-    this.props.requestSinglePokemon(this.props);
+    const PokemonId = this.props.match.params.pokemonId;
+    this.props.requestSinglePokemon(PokemonId);
   }
 
   componentDidUpdate(prevProps){
-    this.props.requestSinglePokemon(this.props.match.params.pokemonId);
+    // debugger
+    if (prevProps.match.params.pokemonId !== this.props.match.params.pokemonId) {
+      this.props.requestSinglePokemon(this.props.match.params.pokemonId);
+    }
   }
 
   render() {
-    if (!this.props.pokemon) return null;
     // debugger
+    if (!this.props.pokemon) return null;
   
     return(
       <div>
-        {this.props.pokemon.name}
+        <p>{this.props.pokemon.name}</p>
+        <img src={this.props.pokemon.image_url}/>
+        <p>{ this.props.items }</p >
+        <ItemDetailContainer />
       </div>
     )
   }
