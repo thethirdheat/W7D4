@@ -4,7 +4,6 @@ export const ItemDetail = props => {
   if(!props) return null;
   debugger
   return (
-    // <div>{props.items}</div>
-    <div>Hi</div>
+    <div>{props.items}</div>
   )
 }

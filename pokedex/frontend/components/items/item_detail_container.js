@@ -4,11 +4,11 @@ import { ItemDetail } from './item_detail';
 import { withRouter } from 'react-router-dom';
 
 
-const mapStateToProps = (state,ownProps) => {
-  // const itemIdstate.entities.items
+const mapStateToProps = (state,{ match }) => {
+  debugger
   return {
-  // items: selectPokemonItem(state,itemId)
-  items: state.entities.items
+    items: selectPokemonItem(state, match.params.itemId)
+  // items: state.entities.items
  }
 };
 
